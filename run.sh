@@ -1,1 +1,1 @@
-java -Djava.library.path=. VectorAdd
+scala -Djava.library.path=. VectorAddScala
