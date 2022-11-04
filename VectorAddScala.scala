@@ -1,7 +1,9 @@
 import VectorAdd._
 
 @main def VectorAddScala() =
-  val a: Array[Int] = Array(1, 2, 3)
-  val b: Array[Int] = Array(4, 5, 6)
+  val a: Array[Int] = (1 to 10000).toArray
+  val b: Array[Int] = (1 to 10000).toArray
   val result = VectorAdd.add(a, b)
-  result foreach println
+  (0 to 9).foreach(x => println(result(x)))
+  println("...")
+  (9990 to 9999).foreach(x => println(result(x)))
