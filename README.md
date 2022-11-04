@@ -16,7 +16,7 @@ Also, please make sure you have the CUDA toolkit installed and that `nvcc` is av
 ./build.sh
 ```
 
-This will create a JNI header file for the example Java method, compile its implementation with nvcc, and compile the scala code in `VectorAddScala.scala`. Look at the comments in `build.sh` for more details. To run:
+This will create a JNI header file for the example Java method, compile its implementation with nvcc, and compile the Scala code in `VectorAddScala.scala`. Look at the comments in `build.sh` for more details. To run:
 
 ```
 ./run.sh
