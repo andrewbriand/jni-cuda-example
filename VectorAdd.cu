@@ -5,8 +5,6 @@
 
 #include "VectorAdd.h"
 
-__managed__ int c;
-
 __global__ void vector_add_kernel(int *a, int *b, int *c, size_t len) {
 
   size_t offset = blockIdx.x * blockDim.x + threadIdx.x;
