@@ -1,5 +1,5 @@
-#include <vector>
 #include <iostream>
+#include <vector>
 
 #include <jni.h>
 
@@ -14,7 +14,6 @@
       std::exit(EXIT_FAILURE);                                                \
     }                                                                         \
   }
-
 
 __global__ void vector_add_kernel(int *a, int *b, int *c, size_t len) {
 
@@ -45,7 +44,7 @@ JNIEXPORT jintArray JNICALL Java_VectorAdd_add(JNIEnv *env, jclass thisClass,
   CHK_CUDA(cudaMemcpy(d_b, h_b, sizeof(int) * len, cudaMemcpyHostToDevice));
 
   const int block_size = 32;
-  const int num_blocks = len / block_size + 1;
+  const int num_blocks = (len + block_size - 1) / block_size;
 
   vector_add_kernel<<<num_blocks, block_size>>>(d_a, d_b, d_c, len);
 
